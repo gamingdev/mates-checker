@@ -2,7 +2,7 @@ var express = require('express'),
     server = express(),
     vhost = require('vhost');
 
-server.use(vhost('mates-checker.localhost', require('./mates-checker/index')));
+server.use(vhost('mates-checker.gamingdev.net', require('./mates-checker/index')));
 
 server.get('/', function(req, res) {
 
