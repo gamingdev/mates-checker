@@ -1,0 +1,72 @@
+.feedback-button {
+    position:absolute;
+    top:200px;
+    left: 0;
+    z-index: 50;
+    cursor: pointer;
+
+    background-color: #337ab7;
+    color: white;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 50%;
+}
+
+.feedback-help {
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    background-color: #f6f7f6;
+
+    border-radius: 6px;
+    border: 1px solid rgb(229, 229, 229);
+
+    position: absolute;
+    top: 266px;
+    left: 0;
+
+    z-index: 100;
+}
+
+.feedback-help textarea {
+    width: 220px;
+
+}
+
+.feedback-help.show {
+    top: 20%;
+}
+    .feedback-help.show textarea {
+        height: 300px;
+        width: 400px;
+    }
+
+    .feedback-help .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .feedback-help .title {
+        margin-bottom: 10px;
+        padding: 0 15px;
+        border-bottom: 1px solid rgb(229, 229, 229);
+    }
+
+    .feedback-help .form-group.reddit {
+        padding: 0 15px;
+        border-bottom: 1px solid rgb(229, 229, 229);
+    }
+        .feedback-help .form-group.reddit a {
+            margin-left: 15px;
+        }
+
+    .feedback-help .buttons {
+        padding-top: 15px;
+        padding-right: 15px;
+        border-top: 1px solid rgb(229, 229, 229);
+    }
+        .feedback-help .form-group {
+            padding: 0 15px;
+        }
+/* passer la gutter-width à 250px */

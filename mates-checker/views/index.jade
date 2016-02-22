@@ -1,0 +1,75 @@
+- var regionUrl = region == "kr" ? "www" : region
+
+doctype html
+html
+    head
+        title Mates checker - gamingdev
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        link(rel='stylesheet', href='css/bootstrap.min.css', crossorigin='anonymous')
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(rel='stylesheet', href="css/mates-checker.css")
+    body
+        .container
+            .feedback-button
+                i.fa.fa-comment.fa-3x
+            .feedback-help.hidden
+                form(name="feedback", method="post")
+                    button.close.close-modal
+                        i.fa.fa-times
+                    .title
+                        h3 #{__("feedback.title")}}
+                            i.fa.fa-envelope-o.pull-left
+                    .form-group.reddit.clearfix
+                        p
+                            strong #{__("feedback.reddit.label")}
+                            a.btn.btn-info(href='https://www.reddit.com/r/leagueoflegends', target='blank')
+                                img(src="https://www.redditstatic.com/icon.png", alt="reddit", height="20px")
+                                | Reddit
+                    .form-group
+                        label(for="body") #{__("feedback.message.label")}
+                        textarea#body.form-control(name="corp", row="20")
+                    .form-group.buttons.modal-footer
+                        button.btn.btn-default.close-modal(type="button") #{__('close')}
+                        input.btn.btn-primary(type="submit", value="#{__('send')}")
+
+            h1 Mates checker
+
+            .text-primary.well
+                p #{__('introduction.welcome')}
+                p #{__('introduction.what-is-this-site')}
+                p #{__('introduction.how-to-use')}
+
+            blockquote
+                ul.list-unstyled
+                    li #{__('to-do-list.compatibility')}
+                    li #{__('to-do-list.translation')}
+                    li #{__('to-do-list.target-site')}
+                footer gamingdev
+
+            label #{__("region.label")}
+            .form-group
+                div.btn-group(role="group")
+                    a.btn(href="/?region=euw", class=region=="euw" ? "btn-primary" : "btn-default") #{__("region-selector.euw")}
+                    a.btn(href="/?region=kr", class=region=="kr" ? "btn-primary" : "btn-default") #{__("region.kr")}
+                    a.btn(href="/?region=eune", class=region=="eune" ? "btn-primary" : "btn-default") #{__("region.eune")}
+                    a.btn(href="/?region=na", class=region=="na" ? "btn-primary" : "btn-default") #{__("region.na")}
+                    a.btn(href="/?region=oce", class=region=="oce" ? "btn-primary" : "btn-default") #{__("region.oce")}
+                    a.btn(href="/?region=br", class=region=="br" ? "btn-primary" : "btn-default") #{__("region.br")}
+                    a.btn(href="/?region=las", class=region=="las" ? "btn-primary" : "btn-default") #{__("region.las")}
+                    a.btn(href="/?region=lan", class=region=="lan" ? "btn-primary" : "btn-default") #{__("region.lan")}
+                    a.btn(href="/?region=ru", class=region=="ru" ? "btn-primary" : "btn-default") #{__("region.ru")}
+                    a.btn(href="/?region=tr", class=region=="tr" ? "btn-primary" : "btn-default") #{__("region.tr")}
+            form(method="post", name="form")
+                .form-group
+                    label(for="input") #{__("log-input.label")}
+                    textarea#input.form-control(name="input", rows="10")
+
+            ul#nameList.list-unstyled.list-inline
+            p.openAll.text-danger.hidden #{__("result.warning-message")} <mark>"#{__("result.warning-message-quote")}"</mark>
+            button#openAll.openAll.btn.btn-info.hidden #{__("result.all-players-button")}
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+        script(src='http://underscorejs.org/underscore-min.js')
+        script(src='js/mates-checker.js')
