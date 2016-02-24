@@ -19,7 +19,7 @@ html
                     button.close.close-modal
                         i.fa.fa-times
                     .title
-                        h3 #{__("feedback.title")}}
+                        h3 #{__("feedback.title")}
                             i.fa.fa-envelope-o.pull-left
                     .form-group.reddit.clearfix
                         p
@@ -36,6 +36,28 @@ html
 
             h1 Mates checker
 
+            nav.navbar.navbar-default.navbar-fixed-top
+                .container-fluid
+                    .navbar-header
+                        a.navbar-brand Configuration
+                    .collapse.navbar-collapse
+                        form.navbar-form.navbar-left(name="configuration", method="post")
+                            .form-group
+                                label(for="name", title="#{__('By adding your name in this field, it will be skipped by the application')}") #{__('Your name')}
+                            .form-group
+                                input.form-control(type="text", name="name")
+                            .form-group
+                                button.btn.btn-default(type="submit") #{__('send')}
+                    ul.dropdown
+                        a
+                        li
+                            a(href="/fr") #{__('Français')}
+                            a(href="/en") #{__('English')}
+
+
+
+
+
             .text-primary.well
                 p #{__('introduction.welcome')}
                 p #{__('introduction.what-is-this-site')}
@@ -51,16 +73,16 @@ html
             label #{__("region.label")}
             .form-group
                 div.btn-group(role="group")
-                    a.btn(href="/?region=euw", class=region=="euw" ? "btn-primary" : "btn-default") #{__("region-selector.euw")}
-                    a.btn(href="/?region=kr", class=region=="kr" ? "btn-primary" : "btn-default") #{__("region.kr")}
-                    a.btn(href="/?region=eune", class=region=="eune" ? "btn-primary" : "btn-default") #{__("region.eune")}
-                    a.btn(href="/?region=na", class=region=="na" ? "btn-primary" : "btn-default") #{__("region.na")}
-                    a.btn(href="/?region=oce", class=region=="oce" ? "btn-primary" : "btn-default") #{__("region.oce")}
-                    a.btn(href="/?region=br", class=region=="br" ? "btn-primary" : "btn-default") #{__("region.br")}
-                    a.btn(href="/?region=las", class=region=="las" ? "btn-primary" : "btn-default") #{__("region.las")}
-                    a.btn(href="/?region=lan", class=region=="lan" ? "btn-primary" : "btn-default") #{__("region.lan")}
-                    a.btn(href="/?region=ru", class=region=="ru" ? "btn-primary" : "btn-default") #{__("region.ru")}
-                    a.btn(href="/?region=tr", class=region=="tr" ? "btn-primary" : "btn-default") #{__("region.tr")}
+                    a.btn(href="/?region=euw", class=region == "euw" ? "btn-primary" : "btn-default") #{__("region-selector.euw")}
+                    a.btn(href="/?region=kr", class=region == "kr" ? "btn-primary" : "btn-default") #{__("region.kr")}
+                    a.btn(href="/?region=eune", class=region == "eune" ? "btn-primary" : "btn-default") #{__("region.eune")}
+                    a.btn(href="/?region=na", class=region == "na" ? "btn-primary" : "btn-default") #{__("region.na")}
+                    a.btn(href="/?region=oce", class=region == "oce" ? "btn-primary" : "btn-default") #{__("region.oce")}
+                    a.btn(href="/?region=br", class=region == "br" ? "btn-primary" : "btn-default") #{__("region.br")}
+                    a.btn(href="/?region=las", class=region == "las" ? "btn-primary" : "btn-default") #{__("region.las")}
+                    a.btn(href="/?region=lan", class=region == "lan" ? "btn-primary" : "btn-default") #{__("region.lan")}
+                    a.btn(href="/?region=ru", class=region == "ru" ? "btn-primary" : "btn-default") #{__("region.ru")}
+                    a.btn(href="/?region=tr", class=region == "tr" ? "btn-primary" : "btn-default") #{__("region.tr")}
             form(method="post", name="form")
                 .form-group
                     label(for="input") #{__("log-input.label")}
@@ -70,6 +92,19 @@ html
             p.openAll.text-danger.hidden #{__("result.warning-message")} <mark>"#{__("result.warning-message-quote")}"</mark>
             button#openAll.openAll.btn.btn-info.hidden #{__("result.all-players-button")}
 
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-        script(src='http://underscorejs.org/underscore-min.js')
-        script(src='js/mates-checker.js')
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+            script(src='http://underscorejs.org/underscore-min.js')
+            script(src='js/bootstrap.min.js')
+            script(src='js/mates-checker.js')
+            script.
+                (function(i,s,o,g,r,a,m){
+                    i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+                    i[r].l=1*new Date();
+                    a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];
+                    a.async=1;
+                    a.src=g;
+                    m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-74259402-1', 'auto');
+                ga('send', 'pageview');
