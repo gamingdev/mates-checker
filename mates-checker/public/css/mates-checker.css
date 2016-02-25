@@ -1,3 +1,14 @@
+body {
+    padding-top: 70px;
+}
+
+.navbar .form-group {
+    margin-left: 5px;
+}
+
+    .navbar .form-group label {
+        margin-bottom: 0;
+    }
 .feedback-button {
     position:absolute;
     top:200px;

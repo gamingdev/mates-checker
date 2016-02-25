@@ -34,28 +34,27 @@ html
                         button.btn.btn-default.close-modal(type="button") #{__('close')}
                         input.btn.btn-primary(type="submit", value="#{__('send')}")
 
-            h1 Mates checker
-
             nav.navbar.navbar-default.navbar-fixed-top
-                .container-fluid
+                .container
                     .navbar-header
-                        a.navbar-brand Configuration
+                        a.navbar-brand Mates checker
                     .collapse.navbar-collapse
-                        form.navbar-form.navbar-left(name="configuration", method="post")
+                        form.navbar-form.navbar-left(name="configuration", method="get")
+                            .form-group(data-toggle="tooltip", data-placement="bottom", title="#{__('navbar.summoner-name.title')}")
+                                label(for="user", data-toggle="tooltip", data-placement="bottom", title="#{__('navbar.summoner-name.title')}") #{__('navbar.summoner-name.label')}
                             .form-group
-                                label(for="name", title="#{__('By adding your name in this field, it will be skipped by the application')}") #{__('Your name')}
-                            .form-group
-                                input.form-control(type="text", name="name")
+                                input.form-control(type="text", name="user", id="user", value="#{userName}")
                             .form-group
                                 button.btn.btn-default(type="submit") #{__('send')}
-                    ul.dropdown
-                        a
-                        li
-                            a(href="/fr") #{__('Français')}
-                            a(href="/en") #{__('English')}
-
-
-
+                        ul.nav.navbar-nav.navbar-right
+                            li.dropdown
+                                a.dropdown-toggle(data-toggle="dropdown", role="button", href="#", aria-haspopup="true", aria-expanded="false") #{__('language')}
+                                    span.caret
+                                ul.dropdown-menu
+                                    li
+                                        a(href="/fr") #{__('Français')}
+                                    li
+                                        a(href="/en") #{__('English')}
 
 
             .text-primary.well
@@ -95,6 +94,9 @@ html
             script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
             script(src='http://underscorejs.org/underscore-min.js')
             script(src='js/bootstrap.min.js')
+            script.
+                var userName = "#{userName}";
+
             script(src='js/mates-checker.js')
             script.
                 (function(i,s,o,g,r,a,m){

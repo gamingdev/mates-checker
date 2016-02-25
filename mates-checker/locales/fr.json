@@ -1,6 +1,9 @@
 {
   "close": "Fermer",
   "send": "Envoyer",
+  "Language": "Langue",
+  "navbar.summoner-name.label": "Votre pseudo",
+  "navbar.summoner-name.title": "Entrer votre nom pour qu'il n'apparaisse plus dans la liste",
   "feedback.title": "Un avis?",
   "feedback.reddit.label": "Répond sur ",
   "feedback.message.label": "Ou envoi moi un message :",
@@ -23,6 +26,6 @@
   "region.tr": "Turkie",
   "log-input.label": "Copie les logs du jeu ici :",
   "result.warning-message": "Attention, il est probable qu'en utilisant ce bouton votre navigateur bloqe l'ouverture des onglets.Pour palier à ce comportement, cliquez sur l'icone correspondant dans la barre d'url et cochez l'option",
-  "result.warning-message-quote": "Toujours afficher les pop provenant de ce site",
+  "result.warning-message-quote": "Toujours afficher les popup provenant de ce site",
   "result.all-players-button": "Tous les joueurs"
 }

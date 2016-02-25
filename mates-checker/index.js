@@ -11,6 +11,9 @@ var express = require('express'),
 var transporter = nodemailer.createTransport(config.smtp);
 i18n.configure({
     locales: ['en', 'fr'],
+    fallbacks: {'fr': 'en'},
+    defaultLocale: 'en',
+    updateFiles: false,
     directory: __dirname + "/locales"
 });
 
@@ -22,11 +25,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/', function(req, res) {
-    var reg = _.isUndefined(req.query.region) ? 'euw' :req.query.region;
+app
+    // default redirection
+    .get('/', function(req, res) {
 
-    res.render('index', {region: reg});
-})
+        res.redirect('/en');
+    })
+
+    .get('/:locale', function(req, res) {
+        var reg = _.isUndefined(req.query.region) ? 'euw' :req.query.region;
+        var userName = _.isUndefined(req.query.user) ? '' :req.query.user;
+
+        // set locale manually
+        res.setLocale(req.params.locale);
+        res.render('index', {region: reg, userName: userName});
+    })
 
     .post('/sendMessage', function(req, res) {
         if (!_.isEmpty(req.body)) {

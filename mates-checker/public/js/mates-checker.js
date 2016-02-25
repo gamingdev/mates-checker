@@ -6,9 +6,10 @@ $(function () {
         regex = /^(.*) (?:a rejoint|joined the)/,
         tempo = null;
 
-    // declared as public to be laucnhable in timeout
+    // declared as public to be launchable in timeout
     parseEntry = function() {
-        str = $('textarea[name="input"]').val();
+        var $textarea = $('textarea[name="input"]');
+        str = $textarea.val();
 
         lines = str.replace(/\r\n/, "\n").split("\n");
         lines.forEach(function (element, index, array) {
@@ -18,6 +19,11 @@ $(function () {
         });
         // supprime les doublons
         names = _.uniq(names);
+        //retirer le userName
+        console.log(names);
+        names = _.without(names, userName);
+        console.log(names);
+
         if (!_.isEmpty(names)) {
             $('#nameList').empty();
             $('.openAll').removeClass('hidden').addClass('show');
@@ -83,8 +89,6 @@ $(function () {
     // fermeture de modal
     $('.close-modal').on('click', function(event) {
         event.preventDefault();
-
-        console.log('la');
 
         $feedbackHelp.removeClass('show hover').addClass('hidden');
     });
