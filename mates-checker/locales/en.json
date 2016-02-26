@@ -6,6 +6,7 @@
   "navbar.summoner-name.title": "Enter your name here so it no longer appears in the list",
   "feedback.title": "Any feedback?",
   "feedback.reddit.label": "Post on",
+  "feedback.reddit.url": "https://www.reddit.com/r/leagueoflegends/comments/47s3ck/new_tool_check_your_teammates_profil_before_game/",
   "feedback.message.label": "Or send me a message :",
   "feedback.success": "Message sent, Thank you.",
   "introduction.welcome": "Welcome to mates-checker",
