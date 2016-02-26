@@ -12,6 +12,7 @@ html
         link(rel='stylesheet', href="css/mates-checker.css")
     body
         .container
+            // ---- feedback
             .feedback-button
                 i.fa.fa-comment.fa-3x
             .feedback-help.hidden
@@ -27,13 +28,17 @@ html
                             a.btn.btn-info(href='https://www.reddit.com/r/leagueoflegends', target='blank')
                                 img(src="https://www.redditstatic.com/icon.png", alt="reddit", height="20px")
                                 | Reddit
-                    .form-group
+                    .form-group.body
                         label(for="body") #{__("feedback.message.label")}
                         textarea#body.form-control(name="corp", row="20")
                     .form-group.buttons.modal-footer
                         input.btn.btn-primary(type="submit", value="#{__('send')}")
                         button.btn.btn-default.close-modal(type="button") #{__('close')}
+                .uil-ring-css.hidden
+                    div
+                p.success.bg-success.hidden #{__('feedback.success')}
 
+            // --- navbar
             nav.navbar.navbar-default.navbar-fixed-top
                 .container
                     .navbar-header
@@ -56,7 +61,7 @@ html
                                     li
                                         a(href="/en") #{__('English')}
 
-
+            // --- body
             .text-primary.well
                 p #{__('introduction.welcome')}
                 p #{__('introduction.what-is-this-site')}
@@ -66,6 +71,7 @@ html
                 ul.list-unstyled
                     li #{__('to-do-list.compatibility')}
                     li #{__('to-do-list.translation')}
+                        a(href="https://github.com/gamingdev/mates-checker", title="github repository") mates-checker@github.
                     li #{__('to-do-list.target-site')}
                 footer gamingdev
 
@@ -93,6 +99,7 @@ html
 
             script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
             script(src='http://underscorejs.org/underscore-min.js')
+            script(src='js/spin.min.js')
             script(src='js/bootstrap.min.js')
             script.
                 var userName = "#{userName}";

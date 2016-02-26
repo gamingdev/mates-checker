@@ -20,9 +20,7 @@ $(function () {
         // supprime les doublons
         names = _.uniq(names);
         //retirer le userName
-        console.log(names);
         names = _.without(names, userName);
-        console.log(names);
 
         if (!_.isEmpty(names)) {
             $('#nameList').empty();
@@ -97,12 +95,23 @@ $(function () {
     $feedbackHelp.on('click', 'input[type="submit"]', function(event) {
         event.preventDefault();
 
+        $('.feedback-help .form-group.body, .feedback-help .form-group.buttons').addClass('hidden');
+        $('.uil-ring-css').removeClass('hidden');
+
         $.post(
             '/sendMessage',
             { corp: $('.feedback-help textarea[name="corp"]').val() },
             function(data, textStatus) {
-                console.log(textStatus);
+                $('.uil-ring-css').addClass('hidden');
+                $('.success').removeClass('hidden');
             }
-        );
+        ).always(function() {
+            setTimeout(function() {
+                $('.feedback-help .form-group.body, .feedback-help .form-group.buttons').removeClass('hidden');
+                $('.success').addClass('hidden');
+                $feedbackHelp.removeClass('show').addClass('hidden');
+                $feedbackHelp.find('textarea[name="body"]').val('');
+            }, 1000);
+        });
     });
 });
