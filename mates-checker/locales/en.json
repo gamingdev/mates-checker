@@ -12,7 +12,7 @@
   "introduction.what-is-this-site": "This site used to quickly check with whom you will be playing your next game.",
   "introduction.how-to-use": "how to use : once in the lobby, copy the log in the chat and paste it bellow. Names of the different summoners will appear. Use \"all players\" button to open get them all in once",
   "to-do-list.compatibility": "Only french and english compatible for now. For compatibility with your language, click on button on the left and send me your lobby's log through the feedback form.",
-  "to-do-list.translation": "To have this site translated into your language, you can contribute to this address ",
+  "to-do-list.translation": "To have this site translated into your language, you can contribute to this link : ",
   "to-do-list.target-site": "Only op.gg for now",
   "region.label": "Select your region",
   "region-selector.euw": "West Europe",
@@ -26,7 +26,6 @@
   "region.ru": "Russia",
   "region.tr": "Turkey",
   "log-input.label": "Paste the game's log here",
-  "result.warning-message": "Caution! It is likely that using this browser button prevent the opening of tabs. To overcome this behavior, click the corresponding icon in your browser's URL bar and select the option",
-  "result.warning-message-quote": "Always show pop up from this site",
+  "result.warning-message": "Caution! It is likely that using this browser button prevent the opening of tabs. To overcome this behavior, click the corresponding icon in your browser's URL bar and select the option \"Always show pop up from this site\"",
   "result.all-players-button": "All players"
 }

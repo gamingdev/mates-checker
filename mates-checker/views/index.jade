@@ -11,7 +11,7 @@ html
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel='stylesheet', href="css/mates-checker.css")
     body
-        .container
+        .container-fluid
             // ---- feedback
             .feedback-button
                 i.fa.fa-comment.fa-3x
@@ -62,58 +62,69 @@ html
                                         a(href="/en") #{__('English')}
 
             // --- body
-            .text-primary.well
-                p #{__('introduction.welcome')}
-                p #{__('introduction.what-is-this-site')}
-                p #{__('introduction.how-to-use')}
+            .row
+                .col-lg-12
+                    .row
+                        .col-lg-8.col-lg-offset-1
+                            .row
+                                .col-lg-12
+                                    .text-primary.well
+                                        p #{__('introduction.welcome')}
+                                        p #{__('introduction.what-is-this-site')}
+                                        p #{__('introduction.how-to-use')}
+                                .col-lg-12
+                                    blockquote
+                                        ul.list-unstyled
+                                            li #{__('to-do-list.compatibility')}
+                                            li #{__('to-do-list.translation')}
+                                                a(href="https://github.com/gamingdev/mates-checker", title="github repository") mates-checker@github.
+                                            li #{__('to-do-list.target-site')}
+                                        footer gamingdev
+                                .col-lg-12
+                                    label #{__("region.label")}
+                                    .form-group
+                                        div.btn-group(role="group")
+                                            a.btn(href="/?region=euw", class=region == "euw" ? "btn-primary" : "btn-default") #{__("region-selector.euw")}
+                                            a.btn(href="/?region=kr", class=region == "kr" ? "btn-primary" : "btn-default") #{__("region.kr")}
+                                            a.btn(href="/?region=eune", class=region == "eune" ? "btn-primary" : "btn-default") #{__("region.eune")}
+                                            a.btn(href="/?region=na", class=region == "na" ? "btn-primary" : "btn-default") #{__("region.na")}
+                                            a.btn(href="/?region=oce", class=region == "oce" ? "btn-primary" : "btn-default") #{__("region.oce")}
+                                            a.btn(href="/?region=br", class=region == "br" ? "btn-primary" : "btn-default") #{__("region.br")}
+                                            a.btn(href="/?region=las", class=region == "las" ? "btn-primary" : "btn-default") #{__("region.las")}
+                                            a.btn(href="/?region=lan", class=region == "lan" ? "btn-primary" : "btn-default") #{__("region.lan")}
+                                            a.btn(href="/?region=ru", class=region == "ru" ? "btn-primary" : "btn-default") #{__("region.ru")}
+                                            a.btn(href="/?region=tr", class=region == "tr" ? "btn-primary" : "btn-default") #{__("region.tr")}
+                                .col-lg-12
+                                    form(method="post", name="form")
+                                        .form-group
+                                            label(for="input") #{__("log-input.label")}
+                                            textarea#input.form-control(name="input", rows="10")
+                                .col-lg-12
+                                    ul#nameList.list-unstyled.list-inline
+                                    button#openAll.openAll.btn.btn-info.hidden(data-toggle="tooltip", data-placement="right", title="#{__('result.warning-message')}") #{__("result.all-players-button")}
+                        .col-lg-3.test
+                            ins(class="adsbygoogle", style="display:inline-block;width:300px;height:600px", data-ad-client="ca-pub-5466650298483971", data-ad-slot="7564072442")
 
-            blockquote
-                ul.list-unstyled
-                    li #{__('to-do-list.compatibility')}
-                    li #{__('to-do-list.translation')}
-                        a(href="https://github.com/gamingdev/mates-checker", title="github repository") mates-checker@github.
-                    li #{__('to-do-list.target-site')}
-                footer gamingdev
-
-            label #{__("region.label")}
-            .form-group
-                div.btn-group(role="group")
-                    a.btn(href="/?region=euw", class=region == "euw" ? "btn-primary" : "btn-default") #{__("region-selector.euw")}
-                    a.btn(href="/?region=kr", class=region == "kr" ? "btn-primary" : "btn-default") #{__("region.kr")}
-                    a.btn(href="/?region=eune", class=region == "eune" ? "btn-primary" : "btn-default") #{__("region.eune")}
-                    a.btn(href="/?region=na", class=region == "na" ? "btn-primary" : "btn-default") #{__("region.na")}
-                    a.btn(href="/?region=oce", class=region == "oce" ? "btn-primary" : "btn-default") #{__("region.oce")}
-                    a.btn(href="/?region=br", class=region == "br" ? "btn-primary" : "btn-default") #{__("region.br")}
-                    a.btn(href="/?region=las", class=region == "las" ? "btn-primary" : "btn-default") #{__("region.las")}
-                    a.btn(href="/?region=lan", class=region == "lan" ? "btn-primary" : "btn-default") #{__("region.lan")}
-                    a.btn(href="/?region=ru", class=region == "ru" ? "btn-primary" : "btn-default") #{__("region.ru")}
-                    a.btn(href="/?region=tr", class=region == "tr" ? "btn-primary" : "btn-default") #{__("region.tr")}
-            form(method="post", name="form")
-                .form-group
-                    label(for="input") #{__("log-input.label")}
-                    textarea#input.form-control(name="input", rows="10")
-
-            ul#nameList.list-unstyled.list-inline
-            p.openAll.text-danger.hidden #{__("result.warning-message")} <mark>"#{__("result.warning-message-quote")}"</mark>
-            button#openAll.openAll.btn.btn-info.hidden #{__("result.all-players-button")}
-
-            script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
-            script(src='http://underscorejs.org/underscore-min.js')
-            script(src='js/spin.min.js')
-            script(src='js/bootstrap.min.js')
-            script.
-                var userName = "#{userName}";
-
-            script(src='js/mates-checker.js')
-            script.
-                (function(i,s,o,g,r,a,m){
-                    i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
-                    i[r].l=1*new Date();
-                    a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];
-                    a.async=1;
-                    a.src=g;
-                    m.parentNode.insertBefore(a,m)
-                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                ga('create', 'UA-74259402-1', 'auto');
-                ga('send', 'pageview');
+                script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+                script(src='http://underscorejs.org/underscore-min.js')
+                script(src='js/spin.min.js')
+                script(src='js/bootstrap.min.js')
+                script.
+                    var userName = "#{userName}";
+                script(src='js/mates-checker.js')
+                script(src='js/feedback.js')
+                script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+                script.
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                script.
+                    (function(i,s,o,g,r,a,m){
+                        i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+                        i[r].l=1*new Date();
+                        a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];
+                        a.async=1;
+                        a.src=g;
+                        m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                    ga('create', 'UA-74259402-1', 'auto');
+                    ga('send', 'pageview');

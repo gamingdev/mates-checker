@@ -1,9 +1,3 @@
 ## Mates checker
 
 this application allows you to quickly check the level of his future teammates
-
-## list
-
-translation
-analytics
-pub

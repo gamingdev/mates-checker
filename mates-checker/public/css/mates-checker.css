@@ -1,3 +1,7 @@
+.test {
+    border: 1px solid black;
+}
+
 body {
     padding-top: 70px;
 }
@@ -13,7 +17,7 @@ body {
 .feedback-button {
     position:absolute;
     top:200px;
-    left: 0;
+    left: 10px;
     z-index: 50;
     cursor: pointer;
 
