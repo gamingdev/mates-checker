@@ -32,13 +32,19 @@ $(function () {
 
         names = _.uniq(names);
         // remove summoner's name from the list
-        names = _.without(names, userName);
+        var lowerNames = _.map(names, function(value, key) {
+            return value.toLowerCase();
+        });
+
+        i = _.indexOf(lowerNames, userName.toLowerCase());
+        if (i > -1) {
+            names.splice(i, 1);
+        }
 
         if (!_.isEmpty(names)) {
             $('#nameList').empty();
             $('.openAll').removeClass('hidden').addClass('show');
 
-            console.log(names);
             // affiche les nom dans la liste
             _.each(names, function(val) {
                 console.log(val);
