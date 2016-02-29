@@ -1,7 +1,6 @@
 var express = require('express'),
     app = express(),
     path = require('path'),
-    vhost = require('vhost'),
     _ = require('underscore'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
@@ -16,7 +15,6 @@ i18n.configure({
     updateFiles: false,
     directory: __dirname + "/locales"
 });
-
 
 app.use(i18n.init);
 app.set('views', path.join(__dirname, 'views'));

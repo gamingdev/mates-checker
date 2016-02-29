@@ -1,0 +1,71 @@
+doctype html
+html(lang="fr")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Accueil - gamingdev.net
+
+        link(href="css/bootstrap.min.css", rel="stylesheet")
+    body
+
+        .row
+            .col-lg-12
+                .row
+                    // body
+                    .col-lg-8.col-lg-offset-1
+                        h1 Bienvenue sur Gamingdev.net
+
+                        p Ce site est fait pour vous proposer des outils, du plus simple au plus complet, lié au gaming.
+
+
+                        section.well
+                            img.center-block(src="images/league-of-legends-logo.jpg", alt="logo league of legends", width="400px")
+
+                            ul
+                                li
+                                    a(href="mates-checker.gaming.dev", title="teammates checker")
+                                        h2 Mates checker
+
+                                    p.
+                                        Pour l'instant, seul l'application web
+                                        #[a(href="mates-checker.gaming.dev", title="teammates checker") mates-checker]
+                                        est terminée en v1.0 et concerne le jeu league of legends.
+
+                                    .blockquote.
+                                        #[a(href="mates-checker.gaming.dev", title="teammates checker") Mates-checker] vous
+                                        permet de vérifier rapidement le profil des ses futurs coéquipiers avant le lancement
+                                        d'une partie.
+
+                                    p.
+                                        Un second projet, de bien plus grande envergure et qui a d'ailleurs débuté bien avant
+                                        #[a(href="mates-checker.gaming.dev", title="teammates checker") mates-checker] est en cours
+                                        de développement et concerne les profils d'équipe de league of legends.
+
+                        section.well
+                            p.
+                                Comme expliqué ci-dessous, je ne couvre pas d'autre jeu pour l'instant. Le site vient
+                                juste de sortir. MAis je suis ouvert à tout idée! N'hésitez pas à m'écrire à
+                                #[a(href="mailto:gamingdev.net@gmail.com", title="gamingdev.net@gmail.com") gamingdev.net@gmail.com]
+
+                    // google adserve
+                    .col-lg-3
+                        ins(class="adsbygoogle", style="display:inline-block;width:300px;height:600px", data-ad-client="ca-pub-5466650298483971", data-ad-slot="7564072442")
+
+
+        // google adserve
+        script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+        script.
+            (adsbygoogle = window.adsbygoogle || []).push({});
+
+        // google analytics
+        script.
+            (function(i,s,o,g,r,a,m){
+                i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},
+                i[r].l=1*new Date();
+                a=s.createElement(o), m=s.getElementsByTagName(o)[0];
+                a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-74259402-1', 'auto');
+            ga('send', 'pageview');

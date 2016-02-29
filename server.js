@@ -1,17 +1,19 @@
 var express = require('express'),
-    server = express(),
+    app = express(),
     vhost = require('vhost'),
+    path = require('path'),
     config = require('./config.js');
 
-server.use(vhost('mates-checker.'+config.env.dns, require('./mates-checker/index')));
+app.use(vhost('mates-checker.'+config.env.dns, require('./mates-checker/index')));
 
-server.get('/', function(req, res) {
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-    var ads = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5466650298483971" data-ad-slot="7564072442"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+app.get('/', function(req, res) {
 
-    var analytics = "<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-74259402-1', 'auto');ga('send', 'pageview');</script>"
-
-    res.end('<html><body><p>More tools incoming</p>' + ads + analytics + '</body></html>');
+    res.render('welcome');
 });
 
-module.exports = server;
+module.exports = app;
