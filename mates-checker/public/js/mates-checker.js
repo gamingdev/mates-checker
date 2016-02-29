@@ -1,6 +1,6 @@
 $(function () {
     var names = [],
-        url = "http://#{regionUrl}.op.gg/summoner/userName=",
+        url = "http://"+ regionUrl +".op.gg/summoner/userName=",
         regex = /^(.*) (?:a rejoint|joined the)/,
         tempo = null;
 
@@ -40,6 +40,8 @@ $(function () {
         if (i > -1) {
             names.splice(i, 1);
         }
+
+        console.log(names);
 
         if (!_.isEmpty(names)) {
             $('#nameList').empty();
